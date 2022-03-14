@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
-  height: 3em;
+  height: 4em;
   border: 0.1rem blue solid;
   width: 100%;
 `;
