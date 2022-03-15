@@ -1,6 +1,6 @@
 import styledComponents from 'styled-components';
 import Banner from '../../Components/Banner/Banner';
-import RowMovies from '../../Components/RowMovies/RowMovies';
+import Row from '../../Components/Row/Row';
 
 const StyledHome = styledComponents.div`
   display: flex;
@@ -13,15 +13,16 @@ const StyledHome = styledComponents.div`
 `;
 
 const Home = () => {
+  const genre = ['Action', 'Comedy', 'Adventure', 'Romance', 'Horror', 'Thriller'];
   return (
     <StyledHome>
       <Banner />
-      <RowMovies />
-      <RowMovies />
-      <RowMovies />
-      <RowMovies />
-      <RowMovies />
-      <RowMovies />
+      <Row genre={genre[0]}/>
+      <Row genre={genre[1]}/>
+      <Row genre={genre[2]}/>
+      <Row genre={genre[3]}/>
+      <Row genre={genre[4]}/>
+      <Row genre={genre[5]}/>
     </StyledHome>
   )
 };
