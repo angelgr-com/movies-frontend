@@ -12,29 +12,29 @@ const StyledRowMovies = styledComponents.div`
   overflow: hidden;
 `;
 
-const RowMovies = () => {
+const RowMovies = ({genre, id_genre}) => {
   return (
     <StyledRowMovies>
-      <Poster num={0}/>
-      <Poster num={1}/>
-      <Poster num={2}/>
-      <Poster num={3}/>
-      <Poster num={4}/>
-      <Poster num={5}/>
-      <Poster num={6}/>
-      <Poster num={7}/>
-      <Poster num={8}/>
-      <Poster num={9}/>
-      <Poster num={10}/>
-      <Poster num={11}/>
-      <Poster num={12}/>
-      <Poster num={13}/>
-      <Poster num={14}/>
-      <Poster num={15}/>
-      <Poster num={16}/>
-      <Poster num={17}/>
-      <Poster num={18}/>
-      <Poster num={19}/>
+      <Poster num={0} genre={genre} id_genre={id_genre}/>
+      <Poster num={1} genre={genre} id_genre={id_genre}/>
+      <Poster num={3} genre={genre} id_genre={id_genre}/>
+      <Poster num={4} genre={genre} id_genre={id_genre}/>
+      <Poster num={5} genre={genre} id_genre={id_genre}/>
+      <Poster num={6} genre={genre} id_genre={id_genre}/>
+      <Poster num={7} genre={genre} id_genre={id_genre}/>
+      <Poster num={8} genre={genre} id_genre={id_genre}/>
+      <Poster num={9} genre={genre} id_genre={id_genre}/>
+      <Poster num={2} genre={genre} id_genre={id_genre}/>
+      <Poster num={10} genre={genre} id_genre={id_genre}/>
+      <Poster num={11} genre={genre} id_genre={id_genre}/>
+      <Poster num={12} genre={genre} id_genre={id_genre}/>
+      <Poster num={13} genre={genre} id_genre={id_genre}/>
+      <Poster num={14} genre={genre} id_genre={id_genre}/>
+      <Poster num={15} genre={genre} id_genre={id_genre}/>
+      <Poster num={16} genre={genre} id_genre={id_genre}/>
+      <Poster num={17} genre={genre} id_genre={id_genre}/>
+      <Poster num={18} genre={genre} id_genre={id_genre}/>
+      <Poster num={19} genre={genre} id_genre={id_genre}/>
     </StyledRowMovies>
   )
 };

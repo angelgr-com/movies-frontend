@@ -45,9 +45,9 @@ const Home = () => {
     <StyledHome>
       <Banner />
       {/* {rows} */}
-      <Row genre={genres[0].genre}/>
-      <Row genre={genres[1].genre}/>
-      <Row genre={genres[2].genre}/>
+      <Row genre={genres[0].genre} id_genre={genres[0].id}/>
+      <Row genre={genres[1].genre} id_genre={genres[1].id}/>
+      <Row genre={genres[2].genre} id_genre={genres[2].id}/>
       <Row genre={genres[3].genre}/>
       <Row genre={genres[4].genre}/>
       <Row genre={genres[5].genre}/>

@@ -13,11 +13,11 @@ const StyledRow = styledComponents.div`
   overflow: hidden;
 `;
 
-const Row = ({genre}) => {
+const Row = ({genre, id_genre}) => {
   return (
     <StyledRow>
       <h3>{genre}</h3>
-      <RowMovies />
+      <RowMovies genre={genre} id_genre={id_genre}/>
     </StyledRow>
   )
 };
