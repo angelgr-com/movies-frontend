@@ -7,7 +7,8 @@ const StyledHome = styledComponents.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: hsl(331, 61%, 82%, 50%);
+  // background-color: hsl(331, 61%, 82%, 50%);
+  background-color: white;
   width: 100%;
   max-height: 100%;
 `;
@@ -41,9 +42,13 @@ const Home = () => {
   //   rows.push(<Row genre={genres[i].genre} />);
   // }
 
+  // Number between 0-18 to obtain a random Banner
+  const max = 18, min = 0;
+  const random = Math.floor(Math.random() * (max - min + 1) + min);
+  console.log('random: ', random);
   return (
     <StyledHome>
-      <Banner />
+      <Banner random={random} id_genre={genres[random].id} />
       {/* {rows} */}
       <Row genre={genres[0].genre} id_genre={genres[0].id}/>
       <Row genre={genres[1].genre} id_genre={genres[1].id}/>
