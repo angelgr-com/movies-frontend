@@ -48,22 +48,22 @@ const Home = () => {
       <Row genre={genres[0].genre} id_genre={genres[0].id}/>
       <Row genre={genres[1].genre} id_genre={genres[1].id}/>
       <Row genre={genres[2].genre} id_genre={genres[2].id}/>
-      <Row genre={genres[3].genre}/>
-      <Row genre={genres[4].genre}/>
-      <Row genre={genres[5].genre}/>
-      <Row genre={genres[6].genre}/>
-      <Row genre={genres[7].genre}/>
-      <Row genre={genres[8].genre}/>
-      <Row genre={genres[9].genre}/>
-      <Row genre={genres[10].genre}/>
-      <Row genre={genres[11].genre}/>
-      <Row genre={genres[12].genre}/>
-      <Row genre={genres[13].genre}/>
-      <Row genre={genres[14].genre}/>
-      <Row genre={genres[15].genre}/>
-      <Row genre={genres[16].genre}/>
-      <Row genre={genres[17].genre}/>
-      <Row genre={genres[18].genre}/>
+      <Row genre={genres[3].genre} id_genre={genres[3].id}/>
+      <Row genre={genres[4].genre} id_genre={genres[4].id}/>
+      <Row genre={genres[5].genre} id_genre={genres[5].id}/>
+      <Row genre={genres[6].genre} id_genre={genres[6].id}/>
+      <Row genre={genres[7].genre} id_genre={genres[7].id}/>
+      <Row genre={genres[8].genre} id_genre={genres[8].id}/>
+      <Row genre={genres[9].genre} id_genre={genres[9].id}/>
+      <Row genre={genres[10].genre} id_genre={genres[10].id}/>
+      <Row genre={genres[11].genre} id_genre={genres[11].id}/>
+      <Row genre={genres[12].genre} id_genre={genres[12].id}/>
+      <Row genre={genres[13].genre} id_genre={genres[13].id}/>
+      <Row genre={genres[14].genre} id_genre={genres[14].id}/>
+      <Row genre={genres[15].genre} id_genre={genres[15].id}/>
+      <Row genre={genres[16].genre} id_genre={genres[16].id}/>
+      <Row genre={genres[17].genre} id_genre={genres[17].id}/>
+      <Row genre={genres[18].genre} id_genre={genres[18].id}/>
     </StyledHome>
   )
 };
