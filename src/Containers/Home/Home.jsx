@@ -13,16 +13,57 @@ const StyledHome = styledComponents.div`
 `;
 
 const Home = () => {
-  const genre = ['Action', 'Comedy', 'Adventure', 'Romance', 'Horror', 'Thriller'];
+  const genres = [
+    { id: '28', genre: 'Action' },
+    { id: '16', genre: 'Animation' },
+    { id: '12', genre: 'Adventure' },
+    { id: '18', genre: 'Drama' },
+    { id: '35', genre: 'Comedy' },
+    { id: '99', genre: 'Documentary' },
+    { id: '80', genre: 'Crime' },
+    { id: '10751', genre: 'Family' },
+    { id: '14', genre: 'Fantasy' },
+    { id: '36', genre: 'History' },
+    { id: '27', genre: 'Horror' },
+    { id: '10402', genre: 'Music' },
+    { id: '9648', genre: 'Mystery' },
+    { id: '10749', genre: 'Romance' },
+    { id: '878', genre: 'Science Fiction' },
+    { id: '10770', genre: 'TV Movie' },
+    { id: '53', genre: 'Thriller' },
+    { id: '10752', genre: 'War' },
+    { id: '37', genre: 'Western' }
+  ];
+
+  // const rows = [];
+
+  // for (let i of genres) {
+  //   rows.push(<Row genre={genres[i].genre} />);
+  // }
+
   return (
     <StyledHome>
       <Banner />
-      <Row genre={genre[0]}/>
-      <Row genre={genre[1]}/>
-      <Row genre={genre[2]}/>
-      <Row genre={genre[3]}/>
-      <Row genre={genre[4]}/>
-      <Row genre={genre[5]}/>
+      {/* {rows} */}
+      <Row genre={genres[0].genre}/>
+      <Row genre={genres[1].genre}/>
+      <Row genre={genres[2].genre}/>
+      <Row genre={genres[3].genre}/>
+      <Row genre={genres[4].genre}/>
+      <Row genre={genres[5].genre}/>
+      <Row genre={genres[6].genre}/>
+      <Row genre={genres[7].genre}/>
+      <Row genre={genres[8].genre}/>
+      <Row genre={genres[9].genre}/>
+      <Row genre={genres[10].genre}/>
+      <Row genre={genres[11].genre}/>
+      <Row genre={genres[12].genre}/>
+      <Row genre={genres[13].genre}/>
+      <Row genre={genres[14].genre}/>
+      <Row genre={genres[15].genre}/>
+      <Row genre={genres[16].genre}/>
+      <Row genre={genres[17].genre}/>
+      <Row genre={genres[18].genre}/>
     </StyledHome>
   )
 };
