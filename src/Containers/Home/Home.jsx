@@ -45,7 +45,8 @@ const Home = () => {
   // Number between 0-18 to obtain a random Banner
   const max = 18, min = 0;
   const random = Math.floor(Math.random() * (max - min + 1) + min);
-  console.log('random: ', random);
+
+
   return (
     <StyledHome>
       <Banner random={random} id_genre={genres[random].id} />
