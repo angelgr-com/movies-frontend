@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import Banner from '../../Components/Banner/Banner';
 import Row from '../../Components/Row/Row';
 import Button from '../../Components/Button/Button';
-import styledComponents from 'styled-components';
+import styled from 'styled-components';
 
 const Home = () => {
   let navigate = useNavigate();
@@ -33,7 +33,7 @@ const Home = () => {
   }
 
   // This hook checks if user is logged in and has a token
-  const [credentials, setCredentials] = useState(JSON.parse(localStorage.getItem("dataUser")));
+  const [credentials, setCredentials] = useState(JSON.parse(localStorage.getItem("userData")));
 
   const genres = [
     { id: '28', genre: 'Action' },
@@ -66,12 +66,12 @@ const Home = () => {
   const max = 18, min = 0;
   const random = Math.floor(Math.random() * (max - min + 1) + min);
 
-  if (credentials?.dataUser?.token !== undefined) {
+  if (credentials?.userData?.token !== undefined) {
     return (
       <StyledHome>
         <ButtonsRow>
           <Button
-            text={credentials.dataUser.nombre} 
+            text={credentials.userData.user} 
             onClick={()=>toProfile()}
           />
           <Button
@@ -140,7 +140,7 @@ const Home = () => {
   }
 };
 
-const ButtonsRow = styledComponents.div`
+const ButtonsRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -151,7 +151,7 @@ const ButtonsRow = styledComponents.div`
   z-index: 100;
 `;
 
-const StyledHome = styledComponents.div`
+const StyledHome = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
