@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { LOGIN } from '../../redux/types';
 import axios from 'axios';
 import styled from 'styled-components';
-const API_BASE_URL = process.env.API_KEY;
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const Login = (props) => {
   let navigate = useNavigate();
@@ -36,7 +36,7 @@ const Login = (props) => {
         password: userData.password
       }
 
-      let result = await axios.post('http://localhost:5000/users/login', body);
+      let result = await axios.post(`${API_BASE_URL}/users/login`, body);
 
       // The component will be reloaded as we change the credential hook
       if(result.data === 'Invalid user or password'){
@@ -50,12 +50,6 @@ const Login = (props) => {
       console.log(error)
     }
   };
-
-  const toRegister = () => {
-    setTimeout(()=>{
-      navigate('/register');
-    }, 1000);
-  }
 
   // Render
   // {<pre>{JSON.stringify(userData, null,2)}</pre>}

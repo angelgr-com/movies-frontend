@@ -1,8 +1,18 @@
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 const MovieInfo = (props) => {
-  const posterURL = 'https://image.tmdb.org/t/p/w500' + props.search?.poster_path;
+  const posterURL = 'https://image.tmdb.org/t/p/w500' + 
+                    props.search?.poster_path;
+  let navigate = useNavigate();
+
+  useEffect(()=> {
+    if(props.search?.title === undefined){
+      navigate("/");
+    }
+  });
 
   return (
     <StyledInfo>
@@ -12,6 +22,7 @@ const MovieInfo = (props) => {
         <span>Votes: {props.search?.vote_count}</span><br/>
         <span>Release date: {props.search?.release_date}</span><br/>
         <p>{props.search?.overview}</p>
+      
       </Info>
       <Poster src={posterURL} alt=""/>
     </StyledInfo>

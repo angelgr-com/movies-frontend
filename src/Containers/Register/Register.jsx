@@ -158,13 +158,6 @@ const StyledForm = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const StyledFieldSet = styled.fieldset`
-  border-radius: 0.2em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
 
 const StyledInput = styled.input`
   border-radius: 0.2em;
@@ -172,6 +165,13 @@ const StyledInput = styled.input`
   height: 2em;
   width: 14em;
   margin-bottom: 1.5em;
+  `;
+const StyledFieldSet = styled.fieldset`
+  border-radius: 0.2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 `;
 const StyledInputRadio = styled.input`
   border-radius: 0.2em;

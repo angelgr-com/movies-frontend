@@ -58,10 +58,9 @@ const Nav = (props) => {
     return () => window.removeEventListener('scroll', transparentNav);
   }, []);
 
-  useEffect(()=>{
-    console.log(props.credentials);
-  })
-
+  // useEffect(()=>{
+  //   console.log(props.credentials);
+  // })
   
   if(!props.credentials?.token){
     return (
@@ -123,10 +122,11 @@ const StyledNav = styled.nav`
   z-index: 100;
 `;
 const Title = styled.h1`
+  cursor: pointer;
   color: hsl(39, 85%, 47%, 88%);
   text-shadow: 0.1em 0.05em  rgba(0,0,0,0.30);
   margin-left: 1em;
-  cursor: pointer;
+  font-size: 2em;
 `;
 const ButtonsRow = styled.div`
   display: flex;

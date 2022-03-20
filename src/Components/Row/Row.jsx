@@ -13,10 +13,11 @@ const Row = ({genre, id_genre}) => {
 
 const StyledGenre = styled.h2`
   text-shadow: 0.15em 0.08em  rgba(0,0,0,0.30);
-  margin-left: 0.5em;
+  margin-left: 0.7em;
 `;
 
 const StyledRow = styled.div`
+  box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.52);
   color: hsl(0, 8%, 93%);
   font-size: 1.2rem;
   display: flex;
