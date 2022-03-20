@@ -114,14 +114,15 @@ const StyledForm = styled.div`
 `;
 
 const StyledInput = styled.input`
+  border-radius: 0.2em;
   font-size: 1.2rem;
   height: 2em;
   width: 14em;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 `;
 const LoginButton = styled.div`
-  width: 7em;
-  height: 2.5em;
+  width: 10em;
+  height: 3em;
   color: white;
   cursor: pointer;
 
@@ -132,8 +133,6 @@ const LoginButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-bottom: 2em;
 
   &:hover {
     transition: 0.3s;

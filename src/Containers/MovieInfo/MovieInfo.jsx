@@ -28,6 +28,7 @@ const StyledInfo = styled.div`
 `;
 
 const Info = styled.div`
+  color: hsl(233, 19%, 18%);
   width: 35%;
   margin-right: 2em;
   font-size: 1.3rem;

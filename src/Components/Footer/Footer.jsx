@@ -13,7 +13,7 @@ const Footer = () => {
 const StyledFooter = styled.footer`
   background-color: #282f2f;
   border: 0.1rem blue solid;
-  color: white;
+  color: hsl(0, 8%, 83%);
   height: 6em;
   width: 100%;
   display: flex;

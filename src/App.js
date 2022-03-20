@@ -12,21 +12,21 @@ import SearchResults from './Containers/SearchResults/SearchResults';
 
 const App = () => {
   return (
-    <AppContainer>
-      <BrowserRouter>
-        <Header />
-          <Routes>
-            <Route path='/' element={ <Home /> } />
-            <Route path='/login' element={ <Login /> } />
-            <Route path='/info' element={ <MovieInfo /> } />
-            <Route path='/profile' element={ <Profile /> } />
-            <Route path='/register' element={ <Register /> } />
-            <Route path='/search' element={ <SearchResults /> } />
-            <Route path='/orders' element={ <Orders /> } />
-          </Routes>
-        <Footer />
-      </BrowserRouter>
-    </AppContainer>
+      <AppContainer>
+        <BrowserRouter>
+          <Header />
+            <Routes>
+              <Route path='/' element={ <Home /> } />
+              <Route path='/login' element={ <Login /> } />
+              <Route path='/info' element={ <MovieInfo /> } />
+              <Route path='/profile' element={ <Profile /> } />
+              <Route path='/register' element={ <Register /> } />
+              <Route path='/search' element={ <SearchResults /> } />
+              <Route path='/orders' element={ <Orders /> } />
+            </Routes>
+          <Footer />
+        </BrowserRouter>
+      </AppContainer>
   );
 }
 
