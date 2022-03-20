@@ -7,7 +7,7 @@ const MovieInfo = (props) => {
   return (
     <StyledInfo>
       <Info>
-        <h1>{props.search?.title}</h1>
+        <StyledTitle>{props.search?.title}</StyledTitle>
         <span>Score: {props.search?.vote_average}/10</span><br/>
         <span>Votes: {props.search?.vote_count}</span><br/>
         <span>Release date: {props.search?.release_date}</span><br/>
@@ -18,6 +18,9 @@ const MovieInfo = (props) => {
   )
 };
 
+const StyledTitle = styled.h1`
+  text-shadow: 0.1em 0.05em  rgba(0,0,0,0.30);
+`;
 const StyledInfo = styled.div`
   background-color: #758787;
   display: flex;
@@ -36,6 +39,13 @@ const Info = styled.div`
 
 const Poster = styled.img`
   height: 30em;
+  box-shadow: -6px 6px 5px 0px rgba(0,0,0,0.52);
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all ease 0.2s;
+    box-shadow: -7px 7px 6px 0px rgba(0,0,0,0.40);
+  }
 `;
 
 export default connect((state) => ({

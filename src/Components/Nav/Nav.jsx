@@ -113,7 +113,7 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   background-color: ${prop => prop.transparent 
-                            ? 'hsl(180, 8%, 17%, 100%)' 
+                            ? 'hsl(180, 8%, 17%, 88%)' 
                             : 'hsl(180, 8%, 17%, 50%)'
                     };
   height: 5em;
@@ -123,7 +123,8 @@ const StyledNav = styled.nav`
   z-index: 100;
 `;
 const Title = styled.h1`
-  color: white;
+  color: hsl(39, 85%, 47%, 88%);
+  text-shadow: 0.1em 0.05em  rgba(0,0,0,0.30);
   margin-left: 1em;
   cursor: pointer;
 `;

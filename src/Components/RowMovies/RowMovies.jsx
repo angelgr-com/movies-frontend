@@ -36,6 +36,7 @@ const StyledRowMovies = styledComponents.div`
   // border: 0.1rem black solid;
   background-color: #758787;
   width: 100%;
+  margin-left: 1em;
 `;
 
 export default RowMovies;
