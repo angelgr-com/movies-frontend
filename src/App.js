@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppContainer } from './AppStyles';
-import Header from './Components/Header/Header';
+import Nav from './Components/Nav/Nav';
 import Footer from './Components/Footer/Footer';
 import Home from './Containers/Home/Home';
 import Login from './Containers/Login/Login';
@@ -14,7 +14,7 @@ const App = () => {
   return (
       <AppContainer>
         <BrowserRouter>
-          <Header />
+          <Nav />
             <Routes>
               <Route path='/' element={ <Home /> } />
               <Route path='/login' element={ <Login /> } />

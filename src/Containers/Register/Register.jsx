@@ -17,6 +17,7 @@ function Register() {
   });
   const [lengthError, setLengthError] = useState('');
   const [invalidError, setInvalidError] = useState('');
+  const [success, setSuccess] = useState('');
 
   // Handler functions
   const fillData = (e) => {
@@ -33,35 +34,37 @@ function Register() {
   };
 
    // Local functions
-  const login = async () => {
+  const register = async () => {
     try {
       // Credentials
       let body = {
+        name: userData.name,
+        username: userData.username,
         email: userData.email,
-        password: userData.password
+        password: userData.password,
+        gender: userData.gender,
+        birthdate: userData.birthdate,
+        city: userData.city,
       }
 
-      let result = await axios.post('http://localhost:5000/users/login', body);
+      let result = await axios.post('http://localhost:5000/users/', body);
 
       // The component will be reloaded as we change the credential hook
       if(result.data === 'Invalid user or password'){
         setInvalidError('Invalid user or password')
       } else {
-        navigate('/');
+        setTimeout(()=>{
+          navigate('/');
+        },3000);
+        setSuccess(`Wellcome ${userData.name}! Login and enjoy your favourite movies.`);
       }
     }
     catch (error) {
-      console.log(error)
+      setInvalidError('Invalid data')
     }
   };
 
-  const toRegister = () => {
-    setTimeout(()=>{
-      navigate('/register');
-    }, 1000);
-  }
-
-  return (
+   return (
     <StyledRegister>
       <StyledForm>
         <StyledInput
@@ -120,11 +123,17 @@ function Register() {
             autoComplete='off'
             onChange={(e)=>{fillData(e); checkPassword(e)}}
           />
-          <RegisterButton>Register</RegisterButton>
+          <Success>{success}</Success>
+          <RegisterButton onClick={()=>{register()}}>Register</RegisterButton>
       </StyledForm>
     </StyledRegister>
   )
 };
+
+const Success = styled.h3`
+  color: hsl(112, 44%, 25%);
+  font-size: 1.5rem;
+`;
 
 const StyledDataLabel = styled.label`
   margin-top: 1em;

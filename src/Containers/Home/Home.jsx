@@ -1,38 +1,8 @@
-import {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
-import Banner from '../../Components/Banner/Banner';
+import Header from '../../Components/Header/Header';
 import Row from '../../Components/Row/Row';
 import styled from 'styled-components';
 
 const Home = () => {
-  let navigate = useNavigate();
-
-  const toLogin = () => {
-    setTimeout(()=>{
-        navigate('/login');
-    },500)
-  }
-
-  const toRegister = () => {
-    setTimeout(()=>{
-        navigate('/register');
-    },500)
-  }
-
-  const toProfile = () => {
-    setTimeout(()=>{
-        navigate('/profile');
-    },500)
-  }
-
-  const toOrders = () => {
-    setTimeout(()=>{
-        navigate('/orders');
-    },500)
-  }
-
-  // This hook checks if user is logged in and has a token
-  const [credentials, setCredentials] = useState(JSON.parse(localStorage.getItem("userData")));
 
   const genres = [
     { id: '28', genre: 'Action' },
@@ -61,15 +31,15 @@ const Home = () => {
   //   rows.push(<Row genre={genres[i].genre} />);
   // }
 
-  // Number between 0-18 to obtain a random Banner
+  // Number between 0-18 to obtain a random Header
   const max = 18, min = 0;
   const random = Math.floor(Math.random() * (max - min + 1) + min);
 
   return (
     <StyledHome>
-      <Banner random={random} id_genre={genres[random].id} />
+      <Header random={random} id_genre={genres[random].id} />
       <Row genre={genres[0].genre} id_genre={genres[0].id} />
-      {/* <Row genre={genres[1].genre} id_genre={genres[1].id} />
+      <Row genre={genres[1].genre} id_genre={genres[1].id} />
       <Row genre={genres[2].genre} id_genre={genres[2].id} />
       <Row genre={genres[3].genre} id_genre={genres[3].id} />
       <Row genre={genres[4].genre} id_genre={genres[4].id} />
@@ -86,7 +56,7 @@ const Home = () => {
       <Row genre={genres[15].genre} id_genre={genres[15].id} />
       <Row genre={genres[16].genre} id_genre={genres[16].id} />
       <Row genre={genres[17].genre} id_genre={genres[17].id} />
-      <Row genre={genres[18].genre} id_genre={genres[18].id} /> */}
+      <Row genre={genres[18].genre} id_genre={genres[18].id} />
     </StyledHome>
   )
 };
