@@ -5,6 +5,7 @@ import Footer from './Components/Footer/Footer';
 import Home from './Containers/Home/Home';
 import Login from './Containers/Login/Login';
 import MovieInfo from './Containers/MovieInfo/MovieInfo';
+import Orders from './Containers/Orders/Orders';
 import Profile from './Containers/Profile/Profile';
 import Register from './Containers/Register/Register';
 import SearchResults from './Containers/SearchResults/SearchResults';
@@ -21,6 +22,7 @@ const App = () => {
             <Route path='/profile' element={ <Profile /> } />
             <Route path='/register' element={ <Register /> } />
             <Route path='/search' element={ <SearchResults /> } />
+            <Route path='/orders' element={ <Orders /> } />
           </Routes>
         <Footer />
       </BrowserRouter>

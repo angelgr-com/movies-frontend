@@ -2,7 +2,6 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import Banner from '../../Components/Banner/Banner';
 import Row from '../../Components/Row/Row';
-import Button from '../../Components/Button/Button';
 import styled from 'styled-components';
 
 const Home = () => {
@@ -22,7 +21,7 @@ const Home = () => {
 
   const toProfile = () => {
     setTimeout(()=>{
-        navigate('/register');
+        navigate('/profile');
     },500)
   }
 
@@ -66,90 +65,31 @@ const Home = () => {
   const max = 18, min = 0;
   const random = Math.floor(Math.random() * (max - min + 1) + min);
 
-  if (credentials?.userData?.token !== undefined) {
-    return (
-      <StyledHome>
-        <ButtonsRow>
-          <Button
-            text={credentials.userData.user} 
-            onClick={()=>toProfile()}
-          />
-          <Button
-            text='My Movies'
-            onClick={()=>toOrders()}
-          />
-        </ButtonsRow>
-        <Banner random={random} id_genre={genres[random].id} />
-        <Row genre={genres[0].genre} id_genre={genres[0].id} />
-        {/* <Row genre={genres[1].genre} id_genre={genres[1].id} />
-        <Row genre={genres[2].genre} id_genre={genres[2].id} />
-        <Row genre={genres[3].genre} id_genre={genres[3].id} />
-        <Row genre={genres[4].genre} id_genre={genres[4].id} />
-        <Row genre={genres[5].genre} id_genre={genres[5].id} />
-        <Row genre={genres[6].genre} id_genre={genres[6].id} />
-        <Row genre={genres[7].genre} id_genre={genres[7].id} />
-        <Row genre={genres[8].genre} id_genre={genres[8].id} />
-        <Row genre={genres[9].genre} id_genre={genres[9].id} />
-        <Row genre={genres[10].genre} id_genre={genres[10].id} />
-        <Row genre={genres[11].genre} id_genre={genres[11].id} />
-        <Row genre={genres[12].genre} id_genre={genres[12].id} />
-        <Row genre={genres[13].genre} id_genre={genres[13].id} />
-        <Row genre={genres[14].genre} id_genre={genres[14].id} />
-        <Row genre={genres[15].genre} id_genre={genres[15].id} />
-        <Row genre={genres[16].genre} id_genre={genres[16].id} />
-        <Row genre={genres[17].genre} id_genre={genres[17].id} />
-        <Row genre={genres[18].genre} id_genre={genres[18].id} /> */}
-      </StyledHome>
-    )
-  }
-  else {
-    return(
-      <StyledHome>
-        <ButtonsRow>
-          <Button
-            text='Login'
-            onClick={()=>toLogin()}
-          />
-          <Button
-            text='Register'
-            onClick={()=>toRegister()}
-          />
-        </ButtonsRow>
-        <Banner random={random} id_genre={genres[random].id} />
-        <Row genre={genres[0].genre} id_genre={genres[0].id}/>
-        {/* <Row genre={genres[1].genre} id_genre={genres[1].id}/>
-        <Row genre={genres[2].genre} id_genre={genres[2].id}/>
-        <Row genre={genres[3].genre} id_genre={genres[3].id}/>
-        <Row genre={genres[4].genre} id_genre={genres[4].id}/>
-        <Row genre={genres[5].genre} id_genre={genres[5].id}/>
-        <Row genre={genres[6].genre} id_genre={genres[6].id}/>
-        <Row genre={genres[7].genre} id_genre={genres[7].id}/>
-        <Row genre={genres[8].genre} id_genre={genres[8].id}/>
-        <Row genre={genres[9].genre} id_genre={genres[9].id}/>
-        <Row genre={genres[10].genre} id_genre={genres[10].id}/>
-        <Row genre={genres[11].genre} id_genre={genres[11].id}/>
-        <Row genre={genres[12].genre} id_genre={genres[12].id}/>
-        <Row genre={genres[13].genre} id_genre={genres[13].id}/>
-        <Row genre={genres[14].genre} id_genre={genres[14].id}/>
-        <Row genre={genres[15].genre} id_genre={genres[15].id}/>
-        <Row genre={genres[16].genre} id_genre={genres[16].id}/>
-        <Row genre={genres[17].genre} id_genre={genres[17].id}/>
-        <Row genre={genres[18].genre} id_genre={genres[18].id}/> */}
-      </StyledHome>
-    )
-  }
+  return (
+    <StyledHome>
+      <Banner random={random} id_genre={genres[random].id} />
+      <Row genre={genres[0].genre} id_genre={genres[0].id} />
+      {/* <Row genre={genres[1].genre} id_genre={genres[1].id} />
+      <Row genre={genres[2].genre} id_genre={genres[2].id} />
+      <Row genre={genres[3].genre} id_genre={genres[3].id} />
+      <Row genre={genres[4].genre} id_genre={genres[4].id} />
+      <Row genre={genres[5].genre} id_genre={genres[5].id} />
+      <Row genre={genres[6].genre} id_genre={genres[6].id} />
+      <Row genre={genres[7].genre} id_genre={genres[7].id} />
+      <Row genre={genres[8].genre} id_genre={genres[8].id} />
+      <Row genre={genres[9].genre} id_genre={genres[9].id} />
+      <Row genre={genres[10].genre} id_genre={genres[10].id} />
+      <Row genre={genres[11].genre} id_genre={genres[11].id} />
+      <Row genre={genres[12].genre} id_genre={genres[12].id} />
+      <Row genre={genres[13].genre} id_genre={genres[13].id} />
+      <Row genre={genres[14].genre} id_genre={genres[14].id} />
+      <Row genre={genres[15].genre} id_genre={genres[15].id} />
+      <Row genre={genres[16].genre} id_genre={genres[16].id} />
+      <Row genre={genres[17].genre} id_genre={genres[17].id} />
+      <Row genre={genres[18].genre} id_genre={genres[18].id} /> */}
+    </StyledHome>
+  )
 };
-
-const ButtonsRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: sticky;
-  top: 1em;
-  width: 100%;
-  z-index: 100;
-`;
 
 const StyledHome = styled.div`
   display: flex;

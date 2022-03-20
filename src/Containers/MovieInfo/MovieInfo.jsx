@@ -24,17 +24,17 @@ const StyledInfo = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 90vh;
 `;
 
 const Info = styled.div`
-  width: 25%;
+  width: 35%;
   margin-right: 2em;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 `;
 
 const Poster = styled.img`
-  height: 25em;
+  height: 30em;
 `;
 
 export default connect((state) => ({
