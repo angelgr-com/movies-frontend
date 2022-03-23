@@ -46,7 +46,7 @@ function Profile(props) {
     // Send user data to backend
     try {
       let res = await axios.put(
-        `${API_BASE_URL}/users/${props.credentials.user.username}`,
+        `${API_BASE_URL}users/${props.credentials.user.username}`,
         body,
         config
       );

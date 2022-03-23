@@ -36,12 +36,14 @@ const Login = (props) => {
         password: userData.password
       }
 
-      let result = await axios.post(`${API_BASE_URL}/users/login`, body);
+      let result = await axios.post(`${API_BASE_URL}users/login`, body);
 
       // The component will be reloaded as we change the credential hook
       if(result.data === 'Invalid user or password'){
+        console.log(result.data);
         setInvalidError('Invalid user or password')
       } else {
+        console.log('dispatch');
         props.dispatch({type:LOGIN, payload: result.data});
         navigate('/');
       }
