@@ -54,7 +54,7 @@ function Register() {
         setInvalidError('Invalid user or password')
       } else {
         setTimeout(()=>{
-          navigate('/');
+          navigate('/login');
         },3000);
         setSuccess(`Wellcome ${userData.name}! Login and enjoy your favourite movies.`);
       }
@@ -67,6 +67,7 @@ function Register() {
    return (
     <StyledRegister>
       <StyledForm>
+        <label for="name">Name: </label>
         <StyledInput
             type='text'
             name='name'
@@ -76,6 +77,7 @@ function Register() {
             autoComplete='off'
             onChange={(e)=>{fillData(e)}}
           />
+        <label for="name">Username: </label>
         <StyledInput
             type='text'
             name='username'
@@ -85,6 +87,7 @@ function Register() {
             autoComplete='off'
             onChange={(e)=>{fillData(e)}}
           />
+        <label for="name">Email: </label>
         <StyledInput
             type='email'
             name='email'
@@ -94,6 +97,7 @@ function Register() {
             autoComplete='off'
             onChange={(e)=>{fillData(e)}}
           />
+        <label for="name">Password: </label>
           <StyledInput
             type='password'
             name='password'

@@ -58,6 +58,7 @@ const Login = (props) => {
   return(
     <StyledLogin>
       <StyledForm>
+        <label>Email: </label>
         <StyledInput
           type='email'
           name='email'
@@ -67,6 +68,7 @@ const Login = (props) => {
           autoComplete='off'
           onChange={(e)=>{fillData(e)}}
         />
+        <label>Password: </label>
         <StyledInput
           type='password'
           name='password'
