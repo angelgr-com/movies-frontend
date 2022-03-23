@@ -11,15 +11,16 @@ const Poster = (props) => {
   const [url, setUrl] = useState(null);
   const [title, setTitle] = useState(null);
   const [film, setFilm] = useState(null);
+  const [movieId, setmovieId] = useState(null);
   let navigate = useNavigate();
 
-  const toMovieInfo = () => {
+  const toInfo = () => {
     props.dispatch({type: MOVIE_DETAIL, payload: film});
     setTimeout(()=>{
-        navigate('/info');
-    },500)
+      navigate('/info');
+    },500);
   }
-  
+
   const getUrl = async () => {
     // 2021 popular movies by genre
     // https://www.themoviedb.org/documentation/api/discover
@@ -27,17 +28,19 @@ const Poster = (props) => {
     const film = results.data.results[props.num];
     const poster = results.data.results[props.num].poster_path;
     const title = results.data.results[props.num].title;
+    const movieId = results.data.results[props.num].id;
     setTitle(title);
+    setmovieId(movieId);
     setFilm(film);
     setUrl('https://image.tmdb.org/t/p/w500' + poster);
   };
 
   useEffect(() => {
     getUrl();
-  }, [])
+  },)
 
   return (
-    <StyledPoster src={url} alt={title} onClick={()=>toMovieInfo()}/>
+    <StyledPoster src={url} id={movieId} alt={title} onClick={()=>toInfo()}/>
   )
 };
 

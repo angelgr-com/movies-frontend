@@ -43,7 +43,6 @@ const Login = (props) => {
         console.log(result.data);
         setInvalidError('Invalid user or password')
       } else {
-        console.log('dispatch');
         props.dispatch({type:LOGIN, payload: result.data});
         navigate('/');
       }

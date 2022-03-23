@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Rent from '../../Components/Rent/Rent';
 import styled from 'styled-components';
@@ -7,14 +5,6 @@ import styled from 'styled-components';
 const MovieInfo = (props) => {
   const posterURL = 'https://image.tmdb.org/t/p/w500' + 
                     props.search?.poster_path;
-  let navigate = useNavigate();
-
-  useEffect(()=> {
-    if(props.search?.title === undefined){
-      navigate("/");
-    }
-  });
-
   return (
     <StyledInfo>
       <Info>
@@ -29,7 +19,7 @@ const MovieInfo = (props) => {
           <Rent
             id={props.search.id}
             token={props.credentials.token}
-            idUser={props.credentials.usuario.id}
+            idUser={props.credentials.user.id}
           />
         }
       </Info>
