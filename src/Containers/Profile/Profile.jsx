@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { MODIFY_CREDENTIALS } from '../../redux/types';
 import axios from 'axios';
 import styled from 'styled-components';
-const API_BASE_URL = process.env.REACT_APP_API_KEY;
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 function Profile(props) {
   let navigate = useNavigate();

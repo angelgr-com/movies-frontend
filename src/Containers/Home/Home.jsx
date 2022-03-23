@@ -39,7 +39,7 @@ const Home = () => {
     <StyledHome>
       <Header random={random} id_genre={genres[random].id} />
       <Row genre={genres[0].genre} id_genre={genres[0].id} />
-      <Row genre={genres[1].genre} id_genre={genres[1].id} />
+      {/* <Row genre={genres[1].genre} id_genre={genres[1].id} />
       <Row genre={genres[2].genre} id_genre={genres[2].id} />
       <Row genre={genres[3].genre} id_genre={genres[3].id} />
       <Row genre={genres[4].genre} id_genre={genres[4].id} />
@@ -56,7 +56,7 @@ const Home = () => {
       <Row genre={genres[15].genre} id_genre={genres[15].id} />
       <Row genre={genres[16].genre} id_genre={genres[16].id} />
       <Row genre={genres[17].genre} id_genre={genres[17].id} />
-      <Row genre={genres[18].genre} id_genre={genres[18].id} />
+      <Row genre={genres[18].genre} id_genre={genres[18].id} /> */}
     </StyledHome>
   )
 };

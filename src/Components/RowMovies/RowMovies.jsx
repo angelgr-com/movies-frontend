@@ -33,7 +33,6 @@ const StyledRowMovies = styledComponents.div`
   display: flex;
   flex-direction: row;
   height: 20em;
-  // border: 0.1rem black solid;
   background-color: #758787;
   width: 100%;
   margin-left: 1em;
