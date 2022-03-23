@@ -9,31 +9,31 @@ const Nav = (props) => {
   let navigate = useNavigate();
   const [transparent, setTransparent] = useState(true);
 
-  const toHome = () => {
+  const toHome = (props) => {
     setTimeout(()=>{
         navigate('/');
     },500)
   }
 
-  const toLogin = () => {
+  const toLogin = (props) => {
     setTimeout(()=>{
         navigate('/login');
     },500)
   }
 
-  const toRegister = () => {
+  const toRegister = (props) => {
     setTimeout(()=>{
         navigate('/register');
     },500)
   }
 
-  const toProfile = () => {
+  const toProfile = (props) => {
     setTimeout(()=>{
         navigate('/profile');
     },500)
   }
 
-  const toOrders = () => {
+  const toOrders = (props) => {
     setTimeout(()=>{
         navigate('/orders');
     },500)

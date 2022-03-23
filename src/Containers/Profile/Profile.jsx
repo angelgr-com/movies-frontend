@@ -6,7 +6,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-function Profile(props) {
+const Profile = (props) => {
   let navigate = useNavigate();
 
   const [userData, setUserData] = useState({
@@ -19,7 +19,8 @@ function Profile(props) {
   });
 
   const userInput = (e) => {
-    setUserData({...userData, [e.target.name]: e.target.value})
+    setUserData({...userData, [e.target.name]: e.target.value});
+    console.log('props.credentials?.user.name', props.credentials?.user.name);
   }
 
   // Redirect to index if user is not logged in
@@ -61,16 +62,17 @@ function Profile(props) {
   return (
     <StyledProfile>
       <StyledForm>
+        <label>Name: </label>
         <StyledInput
           type='text'
           name='name'
           id='name'
           title='name'
           placeholder={userData.name}
-          value={userData.name}
           autoComplete='off'
           onChange={(e)=>{userInput(e)}}
         />
+        <label>Username: </label>
         <StyledInput
           type='text'
           name='username'
@@ -80,6 +82,7 @@ function Profile(props) {
           autoComplete='off'
           onChange={(e)=>{userInput(e)}}
         />
+        <label>Email: </label>
         <StyledInput
           type='email'
           name='email'
@@ -89,14 +92,16 @@ function Profile(props) {
           autoComplete='off'
           onChange={(e)=>{userInput(e)}}
         />
+        <label>Genre: </label>
         <StyledFieldSet>
           <StyledInputRadio
           type="radio" id="male" name="genre" value="male" />
-          <label for="male">Male</label><br/>
+          <label>Male</label><br/>
           <StyledInputRadio
           type="radio" id="female" name="genre" value="female" />
-          <label for="female">Female</label>
+          <label>Female</label>
         </StyledFieldSet>
+        <label>Birthdate: </label>
         <StyledInput
           type='date'
           name='birthdate'
@@ -106,6 +111,7 @@ function Profile(props) {
           autoComplete='off'
           onChange={(e)=>{userInput(e)}}
         />
+        <label>City: </label>
         <StyledInput
           type='text'
           name='city'
@@ -183,6 +189,6 @@ const StyledInputRadio = styled.input`
   margin-bottom: 1.5em;
 `;
 
-export default connect((state)=>({
+export default connect((state) => ({
   credentials: state.credentials
-}))(Profile)
+}))(Profile);

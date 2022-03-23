@@ -67,17 +67,17 @@ function Register() {
    return (
     <StyledRegister>
       <StyledForm>
-        <label for="name">Name: </label>
+        <label>Name: </label>
         <StyledInput
             type='text'
             name='name'
-            id='name'
+            id='nameregister'
             title='name'
             placeholder='Name'
             autoComplete='off'
             onChange={(e)=>{fillData(e)}}
           />
-        <label for="name">Username: </label>
+        <label>Username: </label>
         <StyledInput
             type='text'
             name='username'
@@ -87,7 +87,7 @@ function Register() {
             autoComplete='off'
             onChange={(e)=>{fillData(e)}}
           />
-        <label for="name">Email: </label>
+        <label>Email: </label>
         <StyledInput
             type='email'
             name='email'
@@ -97,7 +97,7 @@ function Register() {
             autoComplete='off'
             onChange={(e)=>{fillData(e)}}
           />
-        <label for="name">Password: </label>
+        <label>Password: </label>
           <StyledInput
             type='password'
             name='password'
@@ -109,16 +109,16 @@ function Register() {
           />
           <Error>{lengthError}</Error>
           <Error>{invalidError}</Error>
-          <StyledDataLabel for="genre">Genre:</StyledDataLabel><br/>
+          <StyledDataLabel>Genre:</StyledDataLabel><br/>
           <StyledFieldSet>
             <StyledInputRadio
             type="radio" id="male" name="genre" value="male" />
-            <label for="male">Male</label><br/>
+            <label>Male</label><br/>
             <StyledInputRadio
             type="radio" id="female" name="genre" value="female" />
-            <label for="female">Female</label>
+            <label>Female</label>
           </StyledFieldSet>
-          <StyledDataLabel for="birthdate">Birthdate:</StyledDataLabel><br/>
+          <StyledDataLabel>Birthdate:</StyledDataLabel><br/>
           <StyledInput
             type='date'
             name='birthdate'
@@ -155,7 +155,7 @@ const Error = styled.p`
   margin: 0;
 `;
 
-const StyledForm = styled.div`
+const StyledForm = styled.form`
   margin-top: 2em;
   display: flex;
   flex-direction: column;
