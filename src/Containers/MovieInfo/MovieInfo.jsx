@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Rent from '../../Components/Rent/Rent';
 import styled from 'styled-components';
 
 const MovieInfo = (props) => {
@@ -22,7 +23,15 @@ const MovieInfo = (props) => {
         <span>Votes: {props.search?.vote_count}</span><br/>
         <span>Release date: {props.search?.release_date}</span><br/>
         <p>{props.search?.overview}</p>
-      
+        {
+          // Show button Rent if user is logged in
+          props.credentials.token && 
+          <Rent
+            id={props.search.id}
+            token={props.credentials.token}
+            idUser={props.credentials.usuario.id}
+          />
+        }
       </Info>
       <Poster src={posterURL} alt=""/>
     </StyledInfo>
