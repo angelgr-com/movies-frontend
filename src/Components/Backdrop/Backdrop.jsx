@@ -1,10 +1,23 @@
+import { connect } from 'react-redux';
 import React from 'react';
 import styledComponents from 'styled-components';
+import Rent from '../Rent/Rent';
 
-const Backdrop = ({random, id_genre, url}) => {
+const Backdrop = (props) => {
 
   return (
-    <StyledBackdrop src={url} alt="TMDB movie" />
+    <>
+    <StyledBackdrop src={props.url} alt="TMDB movie" />
+    {/* {
+      // Show button Rent if user is logged in
+      props.credentials.token && 
+      <Rent
+        id={props.search.id}
+        token={props.credentials.token}
+        idUser={props.credentials.user.id}
+      />
+    } */}
+    </>
   )
 };
 
@@ -15,4 +28,7 @@ const StyledBackdrop = styledComponents.img`
   object-position: 50% 15%;
 `;
 
-export default Backdrop;
+export default connect((state) => ({
+  credentials: state.credentials,
+  search : state.search.film
+}))(Backdrop);

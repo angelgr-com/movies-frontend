@@ -22,7 +22,7 @@ const StyledRow = styled.div`
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
-  height: 20em;
+  height: 24em;
   // border: 0.1rem black solid;
   background-color: hsl(180, 7%, 49%);
   width: 100%;

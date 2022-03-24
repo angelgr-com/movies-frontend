@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 function Register() {
   let navigate = useNavigate();
@@ -15,8 +16,12 @@ function Register() {
     birthdate: '', 
     city: '' 
   });
-  const [lengthError, setLengthError] = useState('');
+  const [pwdLengthError, setPwdLengthError] = useState('');
   const [invalidError, setInvalidError] = useState('');
+  const [invalidName, setInvalidName] = useState('');
+  const [invalidString, setInvalidString] = useState('');
+  const [invalidUsername, setInvalidUsername] = useState('');
+  const [invalidEmail, setInvalidEmail] = useState('');
   const [success, setSuccess] = useState('');
 
   // Handler functions
@@ -26,10 +31,59 @@ function Register() {
 
   const checkPassword = (e) => {
     if (e.target.value.length < 4) {
-      setLengthError('The password must be 4 characters long');
+      setPwdLengthError('The password must be 4 characters long.');
     }
     else {
-      setLengthError('');
+      setPwdLengthError('');
+    }
+  };
+
+  const checkName = (e) => {
+    if (!e.target.value.match(/^[a-zA-Z_ ]*$/)) {
+      setInvalidName('Only alphabet characters for name.');
+    }
+    else {
+      setInvalidName('');
+    }
+  };
+
+  const checkString = (e) => {
+    if (e.target.value.length >= 1 && e.target.value.length < 3) {
+      setInvalidString('Too short.');
+    }
+    else if (e.target.value.length < 1) {
+      setInvalidString('');
+    }
+    else {
+      setInvalidString('');
+    }
+  };
+
+  const checkUsername = (e) => {
+    if (e.target.value.length >= 1 && e.target.value.length < 3) {
+      setInvalidUsername('Too short.');
+    }
+    else if (e.target.value.length < 1) {
+      setInvalidUsername('');
+    }
+    else if (e.target.value.length < 1) {
+      setInvalidUsername('');
+    }
+    else {
+      setInvalidUsername('');
+    }
+  };
+
+  const checkEmail = (e) => {
+    if (e.target.value.length < 1) {
+      setInvalidEmail('');
+    }
+    else if (!e.target.value.includes('@') ||
+             !e.target.value.includes('.com')) {
+      setInvalidEmail('Invalid email.');
+    }
+    else {
+      setInvalidEmail('');
     }
   };
 
@@ -46,8 +100,8 @@ function Register() {
         birthdate: userData.birthdate,
         city: userData.city,
       }
-
-      let result = await axios.post('http://localhost:5000/users/', body);
+      let result = await axios.post(API_BASE_URL + 'users/', body);
+      console.log('result.data: ', result.data);
 
       // The component will be reloaded as we change the credential hook
       if(result.data === 'Invalid user or password'){
@@ -75,8 +129,10 @@ function Register() {
             title='name'
             placeholder='Name'
             autoComplete='off'
-            onChange={(e)=>{fillData(e)}}
+            onChange={(e)=>{fillData(e); checkName(e); checkString(e)}}
           />
+        <Error>{invalidName}</Error>
+        <Error>{invalidString}</Error>
         <label>Username: </label>
         <StyledInput
             type='text'
@@ -85,8 +141,9 @@ function Register() {
             title='username'
             placeholder='username'
             autoComplete='off'
-            onChange={(e)=>{fillData(e)}}
+            onChange={(e)=>{fillData(e); checkUsername(e)}}
           />
+        <Error>{invalidUsername}</Error>
         <label>Email: </label>
         <StyledInput
             type='email'
@@ -95,8 +152,9 @@ function Register() {
             title='email'
             placeholder='Email'
             autoComplete='off'
-            onChange={(e)=>{fillData(e)}}
+            onChange={(e)=>{fillData(e); checkEmail(e)}}
           />
+          <Error>{invalidEmail}</Error>
         <label>Password: </label>
           <StyledInput
             type='password'
@@ -107,17 +165,8 @@ function Register() {
             autoComplete='off'
             onChange={(e)=>{fillData(e); checkPassword(e)}}
           />
-          <Error>{lengthError}</Error>
+          <Error>{pwdLengthError}</Error>
           <Error>{invalidError}</Error>
-          <StyledDataLabel>Genre:</StyledDataLabel><br/>
-          <StyledFieldSet>
-            <StyledInputRadio
-            type="radio" id="male" name="genre" value="male" />
-            <label>Male</label><br/>
-            <StyledInputRadio
-            type="radio" id="female" name="genre" value="female" />
-            <label>Female</label>
-          </StyledFieldSet>
           <StyledDataLabel>Birthdate:</StyledDataLabel><br/>
           <StyledInput
             type='date'
@@ -125,7 +174,7 @@ function Register() {
             id='birthdate'
             title='birthdate'
             autoComplete='off'
-            onChange={(e)=>{fillData(e); checkPassword(e)}}
+            onChange={(e)=>{fillData(e)}}
           />
           <Success>{success}</Success>
           <RegisterButton onClick={()=>{register()}}>Register</RegisterButton>
@@ -168,22 +217,8 @@ const StyledInput = styled.input`
   font-size: 1.2rem;
   height: 2em;
   width: 14em;
-  margin-bottom: 1.5em;
+  margin-bottom: 0.5em;
   `;
-const StyledFieldSet = styled.fieldset`
-  border-radius: 0.2em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
-const StyledInputRadio = styled.input`
-  border-radius: 0.2em;
-  font-size: 0.6rem;
-  height: 2em;
-  width: 3.7em;
-  margin-bottom: 1.5em;
-`;
 const RegisterButton = styled.div`
   width: 10em;
   height: 3em;

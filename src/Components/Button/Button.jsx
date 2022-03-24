@@ -7,8 +7,6 @@ const Button = ({text, onClick}) => {
 
 const StyledButton = styled.button`
   box-shadow: -6px 6px 5px 0px rgba(0,0,0,0.4);
-  display: flex;
-  flex-direction: row;
   margin: 0 1em;
   background-color: hsl(39, 86%, 47%);
   border-radius: 0.5rem;

@@ -49,7 +49,6 @@ const Overlay = styledComponents.div`
 `;
 const StyledHeader = styledComponents.div`
   background-color: hsl(37, 100%, 71%, 50%);
-  border: 0.1rem orange solid;
   height: 25em;
   margin-bottom: 1em;
   position: relative;

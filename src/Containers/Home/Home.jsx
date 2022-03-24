@@ -4,33 +4,6 @@ import styled from 'styled-components';
 
 const Home = () => {
 
-  const genres = [
-    { id: '28', genre: 'Action' },
-    { id: '16', genre: 'Animation' },
-    { id: '12', genre: 'Adventure' },
-    { id: '18', genre: 'Drama' },
-    { id: '35', genre: 'Comedy' },
-    { id: '99', genre: 'Documentary' },
-    { id: '80', genre: 'Crime' },
-    { id: '10751', genre: 'Family' },
-    { id: '14', genre: 'Fantasy' },
-    { id: '36', genre: 'History' },
-    { id: '27', genre: 'Horror' },
-    { id: '10402', genre: 'Music' },
-    { id: '9648', genre: 'Mystery' },
-    { id: '10749', genre: 'Romance' },
-    { id: '878', genre: 'Science Fiction' },
-    { id: '10770', genre: 'TV Movie' },
-    { id: '53', genre: 'Thriller' },
-    { id: '10752', genre: 'War' },
-    { id: '37', genre: 'Western' }
-  ];
-
-  // const rows = [];
-  // for (let i of genres) {
-  //   rows.push(<Row genre={genres[i].genre} />);
-  // }
-
   // Number between 0-18 to obtain a random Header
   const max = 18, min = 0;
   const random = Math.floor(Math.random() * (max - min + 1) + min);
@@ -71,5 +44,32 @@ const StyledHome = styled.div`
   width: 100%;
   max-height: 100%;
 `;
+
+// const rows = [];
+// for (let i of genres) {
+//   rows.push(<Row genre={genres[i].genre} />);
+// }
+
+const genres = [
+  { id: '28', genre: 'Action' },
+  { id: '16', genre: 'Animation' },
+  { id: '12', genre: 'Adventure' },
+  { id: '18', genre: 'Drama' },
+  { id: '35', genre: 'Comedy' },
+  { id: '99', genre: 'Documentary' },
+  { id: '80', genre: 'Crime' },
+  { id: '10751', genre: 'Family' },
+  { id: '14', genre: 'Fantasy' },
+  { id: '36', genre: 'History' },
+  { id: '27', genre: 'Horror' },
+  { id: '10402', genre: 'Music' },
+  { id: '9648', genre: 'Mystery' },
+  { id: '10749', genre: 'Romance' },
+  { id: '878', genre: 'Science Fiction' },
+  { id: '10770', genre: 'TV Movie' },
+  { id: '53', genre: 'Thriller' },
+  { id: '10752', genre: 'War' },
+  { id: '37', genre: 'Western' }
+];
 
 export default Home;
