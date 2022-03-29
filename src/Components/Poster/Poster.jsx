@@ -45,7 +45,7 @@ const Poster = (props) => {
 };
 
 const StyledPoster = styledComponents.img`
-  height: 15em;
+  height: 17em;
   object-fit: cover;
   margin-right: 0.5em;
   width: 100%;

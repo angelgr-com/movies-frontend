@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Backdrop from '../Backdrop/Backdrop';
 
-const Header = ({random, id_genre}) => {
+const Header = (props) => {
   const [url, setUrl] = useState(null);
   const [title, setTitle] = useState(null);
   const [overview, setOverview] = useState(null);
@@ -15,10 +15,10 @@ const Header = ({random, id_genre}) => {
       const getUrl = async () => {
         // 2021 popular movies by genre
         // https://www.themoviedb.org/documentation/api/discover
-        const results = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&with_genres=${id_genre}&primary_release_year=2021&sort_by=popularity.desc`);
-        const poster = results.data.results[random].backdrop_path;
-        const title = results.data.results[random].title;
-        const overview = results.data.results[random].overview;
+        const results = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&with_genres=${props.id_genre}&primary_release_year=2021&sort_by=popularity.desc`);
+        const poster = results.data.results[props.random].backdrop_path;
+        const title = results.data.results[props.random].title;
+        const overview = results.data.results[props.random].overview;
         setUrl('https://image.tmdb.org/t/p/w1280' + poster);
         setTitle(title);
         setOverview(overview);
@@ -27,14 +27,14 @@ const Header = ({random, id_genre}) => {
     } catch (err) {
       console.log(err);
     }
-  }, [random, id_genre])
+  }, [props.random, props.id_genre])
 
   return (
     <StyledHeader>
       <Title>{title}</Title>
       <Overview>{overview}</Overview>
       <Overlay />
-      <Backdrop random={random} id_genre={id_genre} url={url} />
+      <Backdrop random={props.random} id_genre={props.id_genre} url={url} />
     </StyledHeader>
   )
 };
@@ -49,7 +49,6 @@ const Overlay = styledComponents.div`
 `;
 const StyledHeader = styledComponents.div`
   background-color: hsl(37, 100%, 71%, 50%);
-  border: 0.1rem orange solid;
   height: 25em;
   margin-bottom: 1em;
   position: relative;

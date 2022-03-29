@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import RowMovies from '../RowMovies/RowMovies';
 
-const Row = ({genre, id_genre}) => {
+const Row = (props) => {
   return (
     <StyledRow>
-      <StyledGenre>{genre}</StyledGenre>
-      <RowMovies genre={genre} id_genre={id_genre}/>
+      <StyledGenre>{props.genre}</StyledGenre>
+      <RowMovies genre={props.genre} id_genre={props.id_genre}/>
     </StyledRow>
   )
 };
@@ -22,8 +22,7 @@ const StyledRow = styled.div`
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
-  height: 20em;
-  // border: 0.1rem black solid;
+  height: 22em;
   background-color: hsl(180, 7%, 49%);
   width: 100%;
   margin-bottom: 1em;
