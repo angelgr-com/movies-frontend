@@ -25,7 +25,7 @@ const StyledRow = styled.div`
   height: 22em;
   background-color: hsl(180, 7%, 49%);
   width: 100%;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   overflow: hidden;
 `;
 

@@ -43,6 +43,8 @@ const RowMovies = ({genre, id_genre}) => {
 const StyledRowMovies = styledComponents.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   height: 24em;
   background-color: #758787;
   width: 98%;
